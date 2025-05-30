@@ -1,0 +1,103 @@
+<!-- SKIP -->
+<!DOCTYPE html PUBLIC "-/W3C/DTD XHTML 1.0 Transitional/EN" "http:/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http:/www.w3.org/1999/xhtml" xml:lang="da" lang="da">
+<head>
+<p id="MetaTags"></p>
+<script src="file://C:/X1PA/XAlbum/NOEvreLinie/JS_Filer/X1_PAlbum_Alt_JS.js"  type="application/javascript">     </script>
+<script src="file://D:/X1PA/XAlbum/NOEvreLinie/JS_Filer/X1_PAlbum_Alt_JS.js"  type="application/javascript">     </script>
+
+<style type="text/css">
+   a {color: yellow; font-size: 12pt; font-family: sans-serif}
+   h2 {color:white;font-size: 15pt;}
+   #title {color:white;font-size: 15pt;}
+</style>
+
+<script src = "C:/X1PA/XAlbum/NSideBilleder/N_INDEX/N_INDEX_INTERESSER/N_INDEX_MUSIK/INDEX_FOLKEMUSIK/INDEX_Europa/Sorted_Celtic_Folk_Music_JS.js"></script> 
+<script src = "D:/X1PA/XAlbum/NSideBilleder/N_INDEX/N_INDEX_INTERESSER/N_INDEX_MUSIK/INDEX_FOLKEMUSIK/INDEX_Europa/Sorted_Celtic_Folk_Music_JS.js"></script> 
+
+<script>
+var Antal_paa_Linie = 13 
+// ---------------------------- make style ----------------------------------------------------------------------------
+var bgr_Style_Sti    = DriveId[0]   +  '/XAlbum/NINTERESSER/Musik/Folkemusik/European-Folk-Music/Celtic-Music/MORE-CELTIC/'  
+var bgr_Style_Name   = 'Multible-Celtic-Artist';    
+var bgr_Style_width  = 1800;          var bgr_Style_height  = 900;
+var bgr_Style_Size   = 10;            var bgr_Style_Color   = 'pink';   
+var h1_Style_Size    = 40;            var h1_Style_Color    = 'white';
+var h2_Style_Size    = 35;            var h2_Style_Color    = 'yellow';    
+var a_Style_Size     = 13;            var a_Style_Color     = 'whitw';
+
+// --------------------------- make sheet ----------------------------------------------------------------------------------
+var DirIndex        = 1;                          var IconValg     = [1,1,1,1,1,1,1,1,1,0,0,1]; 
+var PrevPage        = DriveId[0]   +  '/XAlbum/NINTERESSER/Musik/Folkemusik/European-Folk-Music/Celtic-Music/MORE-CELTIC/MAIN-MORE-CELTIC.htm';   var SideNavn  = "Play Multiple Celtic Video";
+var OpdateringsDato = "16 Maj 2025";        
+var Datocolor       = "white";                   var Datosize     = "2pt"; 
+// ----------------------------------------------------------
+var BGGR_sti        = ['Musik','Folkemusik','European-FolkMusic','CelticMusic']; 
+var BGGR_FilName    = ''   
+var BGGR_width      = '4500';                     var BGGR_height  = '5000';  
+[BGGR_stiS,BGGR_stiG,BGGR_Size] = Prepare_Background(BGGR_width,BGGR_height,DirIndex,BGGR_sti)
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ref1 = [
+]
+Ref2 = [ 
+[0,1,0,'NINTERESSER/Musik/Folkemusik/European-Folk-Music/Scottish-FolkeMusik/',  'Multible-Scottish-Video.htm',   'NINTERESSER/Musik/Folkemusik/European-Folk-Music/Scottish-FolkeMusik/', 'Multible-Scottish-Video', 'Multible Scottish Music Video'],
+]
+Ref3 = [
+]
+// ---------------------- function PJSFunction () ---------------------------------------------------------------
+function PJSFunction (DirIndex){
+    Make_Meta_Tags (bgr_Style_Name)
+    Make_Style_sheet(bgr_Style_Sti,bgr_Style_Name,bgr_Style_Color,bgr_Style_Size,bgr_Style_width,bgr_Style_height,
+                     h1_Style_Size,h2_Style_Size,h1_Style_Color,h2_Style_Color,a_Style_Size,a_Style_Color)
+    LavIconer (DirIndex,PrevPage,IconValg,SideNavn,OpdateringsDato,Datocolor,Datosize);
+    if (Ref1.length>0) Make_Four_Lines_HTML5 (Ref1,0);
+    if (Ref2.length>0) Make_Four_Lines_HTML5 (Ref2,1);
+    if (Ref3.length>0) Make_two_Lines_HTML5 (Ref3);
+    }
+</script>   
+<!-- ---------------------------------------------------------------------!============================ VARIABEL =====================-->
+<script>
+// ========= VARIABEL =========== 
+
+zz =  Sorted_Celtic_Folk_Music_JS 
+ 
+var videoSource = []; var videoTitle = [];
+for (i=0; i < zz.length;  i++) {
+    if (zz[i][0] == 4 && zz[i][2] == 3) {
+        if (zz[i][3] == 'x') {var xref = DriveMain[0] + ":/X1PA/Music-V/" + zz[i+5][3] + zz[i+5][4]}
+        else {                
+            if (zz[i][4].includes('"')) {
+                console.log(zz[i][4])
+                zz[i][4] = zz[i][4].replace('"','');;
+                console.log(zz[i][4])
+                }
+            var xref = DriveMain[0] + ":/X1PA/Music-V/" +   zz[i][3] +   zz[i][4];       
+        } 
+        videoSource.push(xref);  videoTitle.push(zz[i][7]);
+        }
+    }
+var VideoNumber = videoSource.length;
+</script>
+
+</head>
+
+<body onload="PJSFunction (DirIndex)"> 
+<h1 id="Iconer"></h1>  <p  id="Four_Lines"></p>  <p  id="Drives"> </p>
+
+<video width="512" height="384"  id="myVideo" autoplay="true" muted="muted" controls autoplay>
+<!-- <video width="512" height="384"  id="myVideo" autoplay="true" controls autoplay> -->       
+<!--https://stackoverflow.com/questions/49930680/how-to-handle-uncaught-in-promise-domexception-play-failed-because-the-use-->
+</video>
+<div id="title"></div>
+<h2>Vaelg foerste musikstykke fra listen: (klik)<h2>
+<h2>ordnet foerst efter kunstner og saa efter titel</h2>
+<p id="Two_Lines"> <br /><br /> 
+
+<script src="file://C:/X1PA/XAlbum/NOEvreLinie/JS_Filer/Multiple_Video_JS.js"  type="application/javascript">     </script>
+<script src="file://D:/X1PA/XAlbum/NOEvreLinie/JS_Filer/Multiple_Video_JS.js"  type="application/javascript">     </script>
+
+<br />  <div id="MusikDiv">  </div>  <div id="Opdatering"></div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><button id="G_Baggrund" onclick = "javascript: CreateStyleRule (2, BGGR_stiS, BGGR_stiG, BGGR_FilName, BGGR_Size)">.</button><br /> 
+</body>
+</html>
